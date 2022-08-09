@@ -3,7 +3,7 @@ package com.criteriaManager;
 import com.regexSearch.RSARegexsearch;
 
 public class CareerBreakInfoReader{
-	static String[] keywordset_1= {"career break","re-enter","reenter","return","returnship"};
+	static String[] keywordset_1= {"career break","re-enter","reenter","return to work","returnship"};
 	static String[] keywordset_2= {"present","current","till date","tilldate","to date"};
 	
 	/*	
