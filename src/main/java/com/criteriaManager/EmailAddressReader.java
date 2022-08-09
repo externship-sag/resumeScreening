@@ -10,6 +10,6 @@ public class EmailAddressReader{
 	{
 		String strRegex = "\\S+@\\S+\\.\\S+";
 		String outStr = RSARegexsearch.regexFetchAllMatches(strRegex,fileData);
-        return((outStr.length()>0)?outStr.toString():"****");
+        return((outStr.length()>0)?outStr:"****");
     }
 }
