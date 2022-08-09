@@ -37,10 +37,10 @@ public final class RSARegexsearch {
 		Pattern pattern = Pattern.compile(regexKeyword,Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(strdata);
         rsaDebug.print("Keyvalue = "+regexKeyword);
-
+        String newLine = System.getProperty("line.separator");
         while(matcher.find()){
             rsaDebug.print("Match found::" +matcher.group(0));
-            outStr.append(matcher.group()+System.lineSeparator());
+            outStr.append(matcher.group()+newLine);
         }
 		return outStr.toString();
 	}

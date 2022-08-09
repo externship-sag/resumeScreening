@@ -68,9 +68,14 @@ public class TechnicalSkillReader {
 	 */
 	public String fetchWholeSkillData(String fileData)
 	{
-		String strRegex = "skills((?:.*\\n|\\t){10})";
-		String outStr = RSARegexsearch.regexFetchAllMatches(strRegex, fileData);
-		return outStr;
+		 //To search with multiple patterns, some file contents do not have newline characters
+		String[] strRegex = {"skills.*(?:\\R.*){10}","skills.*"};
+		
+		for(String str:strRegex) {
+			String outStr = RSARegexsearch.regexFetchAllMatches(str, fileData);
+			if(!outStr.isEmpty()) return outStr; 
+		}
+		return "";
 	}
 	
 	/*
@@ -79,8 +84,13 @@ public class TechnicalSkillReader {
 	 */
 	public String fetchCertificationData(String fileData)
 	{
-		String strRegex = "certifi((?:.*\\n|\\t){5})";
-		String outStr = RSARegexsearch.regexFetchAllMatches(strRegex, fileData);
-		return outStr;
+		//To search with multiple patterns, some file contents do not have newline characters
+		String[] strRegex = {"certifi.*(?:\\R.*){5}","certifi.*"};
+		
+		for(String str:strRegex) {
+			String outStr = RSARegexsearch.regexFetchAllMatches(str, fileData);
+			if(!outStr.isEmpty()) return outStr;
+		}
+		return "";
 	}
 }
