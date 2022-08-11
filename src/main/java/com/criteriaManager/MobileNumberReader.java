@@ -8,7 +8,8 @@ public class MobileNumberReader{
 	 */
 	public String getMobileNo(String fileData)
 	{
-		String strRegex = "\\b[-0-9]{10,12}\\b";
+		String strRegex = "\\b((\\d{2}[\\- \\ ])?\\d{10})\\b|(\\b\\d{10}\\b)|(\\b91\\d{10}\\b)";
+
 		String outStr = RSARegexsearch.regexFetchAllMatches(strRegex,fileData);
         return((outStr.length()>0)?outStr:"******");
 	}
